@@ -18,7 +18,7 @@
 - [ ] Render results to a chart using `<chart>` and `charts.js`
 
 ## JavaScript Interactions: app.js
-- *pokemonAppear* array should generate three Pokemon as radio buttons/images
+- *generatePokemon()* function should generate three Pokemon as radio buttons/images
 - User should be able to click on images
 - User should be able to submit their chosen pokemon (*pokemonChosen*)
 - Once user reaches 10 or more plays, tracked by *pokemonCaught*, redirect user to `results/index.html`
@@ -32,14 +32,14 @@
 ```js 
 'POKEDEX' = [
   {
-      id: '',
-      appeared: #,
-      chosen: #
+      pokemon: '',
+      encountered: #,
+      selected: #
   },
   {
-      id: '',
-      appeared: #,
-      chosen: #
+      pokemon: '',
+      encountered: #,
+      selected: #
   },
   ...
 ```
@@ -57,7 +57,7 @@
     - [ ] `localStorage.setItem('POKEDEX', selectedString)`
 
 ### app.js Functions
-- [ ] _pokemonAppear_ function:
+- [ ] _generatePokemon()_ function:
     - [ ] Set 3 index values using `Math.floor(Math.random() * array.length)` 
     - [ ] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
     - [ ] Call _encountered()_

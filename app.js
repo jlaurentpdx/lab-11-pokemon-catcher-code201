@@ -41,3 +41,11 @@ const generatePokemon = () => {
 // let pokemonCaught = 0;
 generatePokemon();
 
+// submitButton.addEventListener('click', () => {
+//     const chosenPokemon = document.querySelector('input[type=radio]:checked');
+
+//     if (pokemonCaught >= 10 ) {
+//         pokemonCaught++;
+
+//     }
+// });
