@@ -45,16 +45,16 @@
 ```
 
 ### Set 'POKEDEX' using two functions
-- [ ] _encountered(id)_ should:
-    - [ ] Call _getPokedex()_
-    - [ ] Increment _pokemonAppear_ by ID
-    - [ ] Stringify to `encounterString`
-    - [ ] `localStorage.setItem('POKEDEX', encounterString)`
-- [ ] _selected_ should:
-    - [ ] Call _getPokedex()_ 
-    - [ ] Increment _pokemonChosen_ by ID
-    - [ ] Stringify to `selectedString`
-    - [ ] `localStorage.setItem('POKEDEX', selectedString)`
+- [x] _encountered(id)_ should:
+    - [x] Call _getPokedex()_
+    - [x] Increment _pokemonAppear_ by ID
+    - [x] Stringify to `encounterString`
+    - [x] `localStorage.setItem('POKEDEX', encounterString)`
+- [x] _selected_ should:
+    - [x] Call _getPokedex()_ 
+    - [x] Increment _pokemonChosen_ by ID
+    - [x] Stringify to `selectedString`
+    - [x] `localStorage.setItem('POKEDEX', selectedString)`
 
 ### app.js Functions
 - [ ] _generatePokemon()_ function:
@@ -63,6 +63,8 @@
     - [ ] Call _encountered()_
     - [ ] Render image using `url_img`
 - [ ] Increment _pokemonCaught_
+
+### TDD Functions
 
 ## State Tracking: 
 - [ ] let _pokemonCaught_ be number of plays

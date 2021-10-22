@@ -7,7 +7,8 @@ export function findById(array, id) {
 }
 
 export function getPokedex() {
-    const pokedex = localStorage.getItem('POKEDEX') || '[]';
+    const pokedexString = localStorage.getItem('POKEDEX') || '[]';
+    const pokedex = JSON.parse(pokedexString);
     return pokedex;
 }
 
@@ -16,9 +17,9 @@ export function encountered(id) {
     let pokemon = findById(pokedex, id);
 
     if (pokemon) {
-        pokemon.encountered++;  
+        pokemon.seen++;  
     } else {
-        const newPokemon = { pokemon: pokemon.name, encountered: 1, chosen: 1 };
+        const newPokemon = { pokemon: pokemon.name, seen: 1, caught: 1 };
         pokedex.push(newPokemon);
     }
 
@@ -29,7 +30,11 @@ export function chosen(id) {
     let pokedex = getPokedex();
     let pokemon = findById(pokedex, id);
 
-    pokemon.chosen++;
+    pokemon.caught++;
 
     localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+}
+
+export function clearPokedex() {
+    return localStorage.removeItem('POKEDEX');
 }
