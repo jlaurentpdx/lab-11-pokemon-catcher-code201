@@ -1,25 +1,94 @@
-# Alchemy Bootstrap Template
+# Poke-catcher
 
-## Making a plan
+## Getting Started
+- [x] Use the `alchemy-bootstrap-template` on GitHub to create a new repo
+- [x] `git clone` your new repo as `lab-11-pokemon-catcher` 
+- [x] `cd` into the repo directory and `code .`
+- [x] Create and checkout a new `dev` branch
+- [x] Download [pokemon.js](https://github.com/alchemycodelab/september-2021-foundations-i/blob/main/curriculum/labs/LAB-11-POKECATCHER/pokemon.js) and copy it into your project
 
-(bolded steps are mandatory, unbolded are for more advanced projects)
+## HTML Elements
+### `~/index.html` should include:
+- [x] 3 radio buttons with selectable images (`<input>` and `<img>` wrapped in a `<label>`)
+    - [x] For images, select 3 photos from the available Pokémon in `pokemon.js`
+- [x] Submit button
+- [x] Clear button
+### `results/index.html` should include:
+- [x] Create `results.html` to display results
+- [ ] Render results to a chart using `<chart>` and `charts.js`
 
-1) **Make a drawing of your app. Simple "wireframes"**
-2) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-3) **For each HTML element ask: Why do I need this?**
-4) Ask which of out HTML elements are hard coded, and which are dynamically generated?
-5) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-6) Is there some state we need to initialize?
-7) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-8) **Think about how to validate each of your steps**
-9) Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
-10) Consider your data model. What objects will you be using? What are the key/value pairs? What arrays do you need? What needs to live in local storage?
-11) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## JavaScript Interactions: app.js
+- *generatePokemon()* function should generate three Pokemon as radio buttons/images
+- User should be able to click on images
+- User should be able to submit their chosen pokemon (*pokemonChosen*)
+- Once user reaches 10 or more plays, tracked by *pokemonCaught*, redirect user to `results/index.html`
+- User should be able to view results generated as a chart via `charts.js` 
 
+## Functions
+### Utilities
+- [x] _findById(x, y)_ - pass parameters `id` and `array`
+- [x] _getPokedex()_ - checks for 'POKEDEX' in localStorage or returns '[]'
 
-## To Run Cypress Tests
-* `npm install`
-* `npm test`
-* Cypress will open -- you should then click "run <#> integration spec(s)"
-    ![](cypress.png)
-* Make sure all tests pass
+```js 
+'POKEDEX' = [
+  {
+      pokemon: '',
+      encountered: #,
+      selected: #
+  },
+  {
+      pokemon: '',
+      encountered: #,
+      selected: #
+  },
+  ...
+```
+
+### Set 'POKEDEX' using two functions
+- [x] _encountered(id)_ should:
+    - [x] Call _getPokedex()_
+    - [x] Increment _pokemonAppear_ by ID
+    - [x] Stringify to `encounterString`
+    - [x] `localStorage.setItem('POKEDEX', encounterString)`
+- [x] _selected_ should:
+    - [x] Call _getPokedex()_ 
+    - [x] Increment _pokemonChosen_ by ID
+    - [x] Stringify to `selectedString`
+    - [x] `localStorage.setItem('POKEDEX', selectedString)`
+
+### app.js Functions
+- [ ] _generatePokemon()_ function:
+    - [ ] Set 3 index values using `Math.floor(Math.random() * array.length)` 
+    - [ ] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
+    - [ ] Call _encountered()_
+    - [ ] Render image using `url_img`
+- [ ] Increment _pokemonCaught_
+
+### TDD Functions
+
+## State Tracking: 
+- [ ] let _pokemonCaught_ be number of plays
+- [ ] let _pokemonChosen_ be which radio button is selected at **Submit** press
+- [ ] let _pokemonAppear_ be three random Pokemon
+
+## User Events
+### On Page Load:
+- [ ] State _pokemonCaught_ = 0
+- [ ] Generate 3 Pokemon
+- [ ] State _pokemonAppear_ = [{id: x}, {id: y}, {id: z}]
+
+### State changes when the **Submit** button or **Clear** button are clicked
+- [ ] On **Submit**: 
+    - [ ] If _pokemonCaught_ is < 10 then
+        - [ ] Increment _pokemonCaught_
+        - [ ] Store result of _pokemonChosen_
+        - [ ] Generate three new Pokemon using _pokemonAppear_
+    - [ ] else
+        - [ ] Direct user to `results.html`
+- [ ] On **Clear**:
+    - [ ] Reset _pokemonCaught_ to 0
+    - [ ] Clear results
+    - [ ] Generate three new Pokemon using _pokemonAppear_  
+
+## Acknowledgement
+This plan was adapted from the collaborative efforts of [@fora-heims](https://github.com/fora-heims), [@Gcrowder93](https://github.com/Gcrowder93), [@ckaynatividad](https://github.com/ckaynatividad), [@Libbi-Dunham](https://github.com/Libbi-Dunham), and [@michellerenehey](https://github.com/michellerenehey). Thanks to Fora for sending me this tremendously helpful resource!
