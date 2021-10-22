@@ -8,14 +8,14 @@
 - [x] Download [pokemon.js](https://github.com/alchemycodelab/september-2021-foundations-i/blob/main/curriculum/labs/LAB-11-POKECATCHER/pokemon.js) and copy it into your project
 
 ## HTML Elements
-### `index.html` should include:
-    - [x] 3 radio buttons with selectable images (`<input>` and `<img>` wrapped in a `<label>`)
-        - [x] For images, select 3 photos from the available Pokémon in `pokemon.js`
-    - [x] Submit button
-    - [ ] Clear button
-### `results.html` should include:
-    - [ ] Create `results.html` to display results
-    - [ ] Render results to a chart using `<chart>` and `charts.js`
+### `~/index.html` should include:
+- [x] 3 radio buttons with selectable images (`<input>` and `<img>` wrapped in a `<label>`)
+    - [x] For images, select 3 photos from the available Pokémon in `pokemon.js`
+- [x] Submit button
+- [x] Clear button
+### `results/index.html` should include:
+- [x] Create `results.html` to display results
+- [ ] Render results to a chart using `<chart>` and `charts.js`
 
 ## JavaScript Interactions: app.js
 - *pokemonAppear* array should generate three Pokemon as radio buttons/images
