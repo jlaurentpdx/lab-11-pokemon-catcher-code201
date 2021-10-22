@@ -7,7 +7,7 @@ const poke1Img = document.getElementById('poke-1-img');
 const poke2Img = document.getElementById('poke-2-img');
 const poke3Img = document.getElementById('poke-3-img');
 
-// const submitButton = document.getElementById('submit-button');
+const submitButton = document.getElementById('submit-button');
 // const resetButton = document.getElementById('reset-button');
 
 const generatePokemon = () => {
@@ -37,14 +37,18 @@ const generatePokemon = () => {
     poke3Radio.value = poke3.id;
 };
 
-// let pokemonCaught = 0;
+let pokemonCaught = 0;
 generatePokemon();
 
-// submitButton.addEventListener('click', () => {
-//     const chosenPokemon = document.querySelector('input[type=radio]:checked');
+submitButton.addEventListener('click', () => {
+    const chosenPokemon = document.querySelector('input[type=radio]:checked');
 
-//     if (pokemonCaught >= 10 ) {
-//         pokemonCaught++;
-
-//     }
-// });
+    if (chosenPokemon) {
+        pokemonCaught++;
+        if (pokemonCaught >= 10){
+            window.location = './results';
+        } else {
+            generatePokemon();
+        }
+    }
+});
