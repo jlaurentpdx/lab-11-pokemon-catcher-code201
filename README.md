@@ -21,8 +21,48 @@
 - *pokemonAppear* array should generate three Pokemon as radio buttons/images
 - User should be able to click on images
 - User should be able to submit their chosen pokemon (*pokemonChosen*)
-- One user reaches 10 or more plays, tracked by *pokemonCaught*, redirect user to `results.html`
+- Once user reaches 10 or more plays, tracked by *pokemonCaught*, redirect user to `results/index.html`
 - User should be able to view results generated as a chart via `charts.js` 
+
+## Functions
+### Utilities
+- [x] _findById(x, y)_ - pass parameters `id` and `array`
+- [x] _getPokedex()_ - checks for 'POKEDEX' in localStorage or returns '[]'
+
+```js 
+'POKEDEX' = [
+  {
+      id: '',
+      appeared: #,
+      chosen: #
+  },
+  {
+      id: '',
+      appeared: #,
+      chosen: #
+  },
+  ...
+```
+
+### Set 'POKEDEX' using two functions
+- [ ] _encountered(id)_ should:
+    - [ ] Call _getPokedex()_
+    - [ ] Increment _pokemonAppear_ by ID
+    - [ ] Stringify to `encounterString`
+    - [ ] `localStorage.setItem('POKEDEX', encounterString)`
+- [ ] _selected_ should:
+    - [ ] Call _getPokedex()_ 
+    - [ ] Increment _pokemonChosen_ by ID
+    - [ ] Stringify to `selectedString`
+    - [ ] `localStorage.setItem('POKEDEX', selectedString)`
+
+### app.js Functions
+- [ ] _pokemonAppear_ function:
+    - [ ] Set 3 index values using `Math.floor(Math.random() * array.length)` 
+    - [ ] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
+    - [ ] Call _encountered()_
+    - [ ] Render image using `url_img`
+- [ ] Increment _pokemonCaught_
 
 ## State Tracking: 
 - [ ] let _pokemonCaught_ be number of plays
@@ -47,46 +87,6 @@
     - [ ] Reset _pokemonCaught_ to 0
     - [ ] Clear results
     - [ ] Generate three new Pokemon using _pokemonAppear_  
-
-## Functions
-### Utilities
-- [ ] _findById(x, y)_ - pass parameters `id` and `array`
-- [ ] _getPokedex()_ - checks for 'POKEDEX' in localStorage or returns '[]'
-
-```js 
-'POKEDEX' = [
-  {
-      id: '',
-      appeared: #,
-      chosen: #
-  },
-  {
-      id: '',
-      appeared: #,
-      chosen: #
-  },
-  ...
-```
-
-### Set 'POKEDEX' using two functions
-- [ ] _encountered_ should:
-    - [ ] Call _getPokedex()_
-    - [ ] Increment _pokemonAppear_
-    - [ ] Stringify to `encounterString`
-    - [ ] `localStorage.setItem('POKEDEX', encounterString)`
-- [ ] _selected_ should:
-    - [ ] Call _getPokedex()_
-    - [ ] Increment _pokemonChosen_
-    - [ ] Stringify to `selectedString`
-    - [ ] `localStorage.setItem('POKEDEX', selectedString)`
-
-### app.js Functions
-- [ ] _pokemonAppear_ function:
-    - [ ] Set 3 index values using `Math.floor(Math.random() * array.length)` 
-    - [ ] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
-    - [ ] Call _encountered()_
-    - [ ] Render image using `url_img`
-- [ ] Increment _pokemonCaught_
 
 ## Acknowledgement
 This plan was adapted from the collaborative efforts of [@fora-heims](https://github.com/fora-heims), [@Gcrowder93](https://github.com/Gcrowder93), [@ckaynatividad](https://github.com/ckaynatividad), [@Libbi-Dunham](https://github.com/Libbi-Dunham), and [@michellerenehey](https://github.com/michellerenehey). Thanks to Fora for sending me this tremendously helpful resource!
