@@ -1,5 +1,4 @@
 import pokedex from './src/pokemon.js';
-import { encountered } from './utils.js'; 
 
 const poke1Radio = document.getElementById('poke-1-radio');
 const poke2Radio = document.getElementById('poke-2-radio');
@@ -23,17 +22,17 @@ const generatePokemon = () => {
     }
 
     let poke1 = pokedex[randNum1];
-    encountered(poke1.id);
+    // encountered(poke1.id);
     poke1Img.src = poke1.url_image;
     poke1Radio.value = poke1.id;
 
     let poke2 = pokedex[randNum2];
-    encountered(poke2.id);
+    // encountered(poke2.id);
     poke2Img.src = poke2.url_image;
     poke2Radio.value = poke2.id;
 
     let poke3 = pokedex[randNum3];
-    encountered(poke3.id);
+    // encountered(poke3.id);
     poke3Img.src = poke3.url_image;
     poke3Radio.value = poke3.id;
 };
