@@ -27,7 +27,9 @@
 ## Functions
 ### Utilities
 - [x] _findById(x, y)_ - pass parameters `id` and `array`
+    - [x] Pass TDD for above function
 - [x] _getPokedex()_ - checks for 'POKEDEX' in localStorage or returns '[]'
+    - [x] Pass TDD for above function
 
 ```js 
 'POKEDEX' = [
@@ -46,45 +48,47 @@
 
 ### Set 'POKEDEX' using two functions
 - [x] _encountered(id)_ should:
+    - [x] Pass TDD for above function
     - [x] Call _getPokedex()_
     - [x] Increment _pokemonAppear_ by ID
     - [x] Stringify to `encounterString`
     - [x] `localStorage.setItem('POKEDEX', encounterString)`
-- [x] _selected_ should:
+- [ ] _chosen_ should:
+    - [ ] Pass TDD for above function
     - [x] Call _getPokedex()_ 
     - [x] Increment _pokemonChosen_ by ID
     - [x] Stringify to `selectedString`
     - [x] `localStorage.setItem('POKEDEX', selectedString)`
 
 ### app.js Functions
-- [ ] _generatePokemon()_ function:
-    - [ ] Set 3 index values using `Math.floor(Math.random() * array.length)` 
-    - [ ] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
-    - [ ] Call _encountered()_
-    - [ ] Render image using `url_img`
-- [ ] Increment _pokemonCaught_
+- [x] _generatePokemon()_ function:
+    - [x] Set 3 index values using `Math.floor(Math.random() * array.length)` 
+    - [x] Ensure above indices are unique using a `while` loop where condition is that no two numbers are identical
+    - [x] Call _encountered()_
+    - [x] Render image using `url_img`
+- [x] Increment _pokemonCaught_
 
 ### TDD Functions
 
 ## State Tracking: 
-- [ ] let _pokemonCaught_ be number of plays
-- [ ] let _pokemonChosen_ be which radio button is selected at **Submit** press
-- [ ] let _pokemonAppear_ be three random Pokemon
+- [x] let _pokemonCaught_ be number of plays
+- [x] let _pokemonChosen_ be which radio button is selected at **Submit** press
+- [x] let _pokemonAppear_ be three random Pokemon
 
 ## User Events
 ### On Page Load:
-- [ ] State _pokemonCaught_ = 0
-- [ ] Generate 3 Pokemon
-- [ ] State _pokemonAppear_ = [{id: x}, {id: y}, {id: z}]
+- [x] State _pokemonCaught_ = 0
+- [x] Generate 3 Pokemon
+- [x] State _pokemonAppear_ = [{id: x}, {id: y}, {id: z}]
 
 ### State changes when the **Submit** button or **Clear** button are clicked
-- [ ] On **Submit**: 
-    - [ ] If _pokemonCaught_ is < 10 then
-        - [ ] Increment _pokemonCaught_
-        - [ ] Store result of _pokemonChosen_
-        - [ ] Generate three new Pokemon using _pokemonAppear_
-    - [ ] else
-        - [ ] Direct user to `results.html`
+- [x] On **Submit**: 
+    - [x] If _pokemonCaught_ is < 10 then
+        - [x] Increment _pokemonCaught_
+        - [x] Store result of _pokemonChosen_
+        - [x] Generate three new Pokemon using _pokemonAppear_
+    - [x] else
+        - [x] Direct user to `results.html`
 - [ ] On **Clear**:
     - [ ] Reset _pokemonCaught_ to 0
     - [ ] Clear results
