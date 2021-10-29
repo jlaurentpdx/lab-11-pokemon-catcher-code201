@@ -45,6 +45,7 @@ submitButton.addEventListener('click', () => {
     const chosenPokemon = document.querySelector('input[type=radio]:checked');
 
     if (chosenPokemon) {
+        u.chosen(Number(chosenPokemon.value));
         pokemonCaught++;
         if (pokemonCaught >= 10){
             window.location = './results';

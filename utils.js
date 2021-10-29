@@ -1,31 +1,31 @@
 export function findById(array, id) {
-    for (let index of array) {
-        if (index.id === id) {
-            return index;
+    for (let item of array) {
+        if (item.id === id) {
+            return item;
         }    
     }
 }
 
 export function getPokedex() {
     const pokedexString = localStorage.getItem('POKEDEX') || '[]';
-    const pokedex = JSON.parse(pokedexString);
-    return pokedex;
+    const localPokedex = JSON.parse(pokedexString);
+    return localPokedex;
 }
 
 export function encountered(id) {
-    let pokedex = getPokedex();
-    let pokemon = findById(pokedex, id);
+    let localPokedex = getPokedex();
+    console.log(localPokedex);
+    let pokemon = findById(localPokedex, id);
+    console.log(pokemon);
 
     if (pokemon) {
         pokemon.seen++;  
     } else {
-        const newPokemon = { name: id.name, seen: 1, caught: 1 };
-        pokedex.push(newPokemon);
-        console.log(newPokemon);
+        const newPokemon = { id: id, seen: 1, caught: 0 };
+        localPokedex.push(newPokemon);
     }
 
-
-    localStorage.setItem('POKEDEX', JSON.stringify(pokedex));
+    localStorage.setItem('POKEDEX', JSON.stringify(localPokedex));
 }
 
 export function chosen(id) {
