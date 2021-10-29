@@ -48,12 +48,12 @@
 
 ### Set 'POKEDEX' using two functions
 - [x] _encountered(id)_ should:
-    - [ ] Pass TDD for above function
+    - [x] Pass TDD for above function
     - [x] Call _getPokedex()_
     - [x] Increment _pokemonAppear_ by ID
     - [x] Stringify to `encounterString`
     - [x] `localStorage.setItem('POKEDEX', encounterString)`
-- [ ] _selected_ should:
+- [ ] _chosen_ should:
     - [ ] Pass TDD for above function
     - [x] Call _getPokedex()_ 
     - [x] Increment _pokemonChosen_ by ID

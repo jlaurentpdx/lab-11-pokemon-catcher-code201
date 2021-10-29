@@ -14,9 +14,7 @@ export function getPokedex() {
 
 export function encountered(id) {
     let localPokedex = getPokedex();
-    console.log(localPokedex);
     let pokemon = findById(localPokedex, id);
-    console.log(pokemon);
 
     if (pokemon) {
         pokemon.seen++;  
