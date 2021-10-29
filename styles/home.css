@@ -1,1 +1,46 @@
-/* add home page styles here */
+:root {
+    --bg-color: #CADC9F;
+    --lighter: #9bbc0f;
+    --light: #8bac0f;
+    --dark: #306230;
+    --darker: #0f380f;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    margin: 2vw;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+img {
+    width: 15vw;
+}
+
+input[type=radio]:checked + img {
+    transform: scale(1.1);
+    border: 3px double var(--dark);
+    border-radius: 20%;
+    background-color: var(--lighter);
+}
+
+button {
+    background-color: var(--darker);
+    color: var(--bg-color);
+
+    width: 10vw;
+    height: 2vw;
+
+    border-radius: 10px;
+
+    font-size: 1vw;
+    font-family: "Titillium Web", sans-serif;
+
+    margin: 10px;
+}
+
