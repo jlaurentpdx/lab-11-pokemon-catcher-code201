@@ -9,7 +9,9 @@ const poke2Img = document.getElementById('poke-2-img');
 const poke3Img = document.getElementById('poke-3-img');
 
 const submitButton = document.getElementById('submit-button');
-// const resetButton = document.getElementById('reset-button');
+const resetButton = document.getElementById('reset-button');
+
+u.clearPokedex();
 
 const generatePokemon = () => {
     let randNum1 = Math.floor(Math.random() * pokemonList.length);
@@ -53,4 +55,9 @@ submitButton.addEventListener('click', () => {
             generatePokemon();
         }
     }
+});
+
+resetButton.addEventListener('click', () => {
+    u.clearPokedex();
+    generatePokemon();
 });

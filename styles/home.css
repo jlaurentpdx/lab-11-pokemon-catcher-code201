@@ -6,8 +6,15 @@
     --darker: #0f380f;
 }
 
+@font-face {
+    font-family: 'Pokemon-GB';
+    src: url('../assets/pokemon-gb-font.ttf');
+}
+
 body {
     background-color: var(--bg-color);
+    text-align: center;
+    font-family: 'Pokemon-GB', sans-serif;
 }
 
 main {
@@ -39,8 +46,8 @@ button {
 
     border-radius: 10px;
 
-    font-size: 1vw;
-    font-family: "Titillium Web", sans-serif;
+    font-size: 0.8vw;
+    font-family: "Pokemon-GB", sans-serif;
 
     margin: 10px;
 }

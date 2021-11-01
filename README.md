@@ -15,7 +15,7 @@
 - [x] Clear button
 ### `results/index.html` should include:
 - [x] Create `results.html` to display results
-- [ ] Render results to a chart using `<chart>` and `charts.js`
+- [x] Render results to a chart using `<chart>` and `charts.js`
 
 ## JavaScript Interactions: app.js
 - *generatePokemon()* function should generate three Pokemon as radio buttons/images

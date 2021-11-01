@@ -21,12 +21,12 @@ for (let pokemon of localPokedex) {
     
     const p = document.createElement('p');
     
-    const seenSpan = document.createElement('span');
-    seenSpan.textContent = `Seen: ${pokemon.seen}`;
-    const caughtSpan = document.createElement('span');
-    caughtSpan.textContent = `Caught: ${pokemon.caught}`;
+    const seenCount = document.createElement('p');
+    seenCount.textContent = `Seen: ${pokemon.seen}`;
+    const caughtCount = document.createElement('p');
+    caughtCount.textContent = `Caught: ${pokemon.caught}`;
 
-    p.append(seenSpan, caughtSpan);
+    p.append(seenCount, caughtCount);
     p.classList.add('results-text');
 
     div.append(img, p);
@@ -36,13 +36,10 @@ for (let pokemon of localPokedex) {
 
 const namePokemon = localPokedex.map((pokemon) => {
     const idPokemon = u.findById(pokedex, pokemon.id);
-    console.log(idPokemon);
     return String(idPokemon.pokemon).toUpperCase();
 });
 
 const caughtPokemon = localPokedex.map(pokemon => pokemon.caught);
-
-console.log(caughtPokemon);
 
 var ctx = document.getElementById('display-chart').getContext('2d');
 // eslint-disable-next-line no-undef
