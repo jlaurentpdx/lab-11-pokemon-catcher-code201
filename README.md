@@ -53,8 +53,8 @@
     - [x] Increment _pokemonAppear_ by ID
     - [x] Stringify to `encounterString`
     - [x] `localStorage.setItem('POKEDEX', encounterString)`
-- [ ] _chosen_ should:
-    - [ ] Pass TDD for above function
+- [x] _chosen_ should:
+    - [x] Pass TDD for above function
     - [x] Call _getPokedex()_ 
     - [x] Increment _pokemonChosen_ by ID
     - [x] Stringify to `selectedString`
