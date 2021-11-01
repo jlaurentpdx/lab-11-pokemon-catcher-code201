@@ -35,20 +35,23 @@ for (let pokemon of localPokedex) {
 }
 
 const namePokemon = localPokedex.map((pokemon) => {
-    const idPokemon = u.findById(pokedex, pokemon.pokemon);
-    return idPokemon;
+    const idPokemon = u.findById(pokedex, pokemon.id);
+    console.log(idPokemon);
+    return String(idPokemon.pokemon).toUpperCase();
 });
 
 const caughtPokemon = localPokedex.map(pokemon => pokemon.caught);
 
-var ctx = document.getElementById('displayChart').getContext('2d');
+console.log(caughtPokemon);
+
+var ctx = document.getElementById('display-chart').getContext('2d');
 // eslint-disable-next-line no-undef
 new Chart(ctx, {
     type: 'bar',
     data: {
         labels: namePokemon,
         datasets: [{
-            label: '# of Times Picked',
+            label: 'Times Caught:',
             data: caughtPokemon,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
