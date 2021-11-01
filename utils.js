@@ -12,6 +12,14 @@ export function getPokedex() {
     return localPokedex;
 }
 
+export function setPokedexGlobal(results) {
+    const pokedexString = localStorage.getItem('GLOBAL-DEX') || '[]';
+    const globalPokedex = JSON.parse(pokedexString);
+    
+    globalPokedex.push(results);
+    localStorage.setItem('GLOBAL-DEX', JSON.stringify(globalPokedex));
+}
+
 export function encountered(id) {
     let localPokedex = getPokedex();
     let pokemon = findById(localPokedex, id);

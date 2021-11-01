@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+h2, p {
+    font-size: 1.2vw;
+}
+
+p {
+    font-size: 1vw;
+}
+
+img {
+    filter: grayscale(0);
+}
+
+.results-container {
+    border-bottom: 1px solid green;
+    border-collapse: collapse;
+}
