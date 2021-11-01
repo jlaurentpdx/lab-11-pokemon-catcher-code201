@@ -58,6 +58,5 @@ submitButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-    u.clearPokedex();
-    generatePokemon();
+    window.location.reload();
 });
