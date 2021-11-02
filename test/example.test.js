@@ -32,7 +32,7 @@ test('findById should access a pokemon by its .id from pokedex', (expect) => {
         'color_f':'#81A763',
         'egg_group_1':'monster',
         'egg_group_2':'plant',
-        'url_image':'http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+        'url_image':'https://img.pokemondb.net/sprites/firered-leafgreen/normal/bulbasaur.png',
         'generation_id':1,
         'evolves_from_species_id':'NA',
         'evolution_chain_id':1,
